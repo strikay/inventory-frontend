@@ -1,4 +1,5 @@
 import Input from '@mui/joy/Input';
+import Alert from '@mui/joy/Alert';
 import SearchIcon from '@mui/icons-material/Search';
 import inventoryService from '../../services/inventory';
 import Item from './Item';
@@ -38,6 +39,7 @@ const Home = () => {
     const [items, setItems] = useState([]);
     const [searchValue, setSearchValue] = useState("");
     const [refresh, setRefresh] = useState(false);
+    const [message, setMessage] = useState("");
 
     useEffect(()=>{
         const getItems = async () => {
@@ -58,12 +60,14 @@ const Home = () => {
         <Heading headingText={"Inventory"}/>
         <div style={styles.headingContainer}>
             <Input size="lg" placeholder="Search for an item" value={searchValue} onChange={e=>setSearchValue(e.target.value)} startDecorator={<SearchIcon/>} fullWidth />
+            {message && <Alert color="success" sx={{mt:2}}>{message}</Alert>}
         </div>
+
         <div style={styles.contentSection}>
             {items.filter((item) => {
                 return !searchValue || item.item_category.includes(searchValue)
             }).map((item) => (
-                <Item key={item.id} item={item} setRefresh={setRefresh}/>
+                <Item key={item.id} item={item} setRefresh={setRefresh} setMessage={setMessage}/>
             ))}
         </div>
       </div>

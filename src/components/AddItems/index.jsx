@@ -37,6 +37,7 @@ const styles={
 const AddItems = ({user}) => {
     const [item_category, setItemCategory] = useState("");
     const [units, setUnits] = useState("");
+    const [message, setMessage] = useState("");
 
     const handleItemAddition = async (e) => {
         e.preventDefault();
@@ -44,6 +45,10 @@ const AddItems = ({user}) => {
         const data = await inventoryService.addItems(itemsObject);
         if(data){
             console.log(data)
+            setMessage("Added Successfully")
+            setTimeout(() => {
+                setMessage("")
+            }, 5000);
         }
     }
     return (
@@ -52,7 +57,7 @@ const AddItems = ({user}) => {
                 <Heading headingText={"Add Items"}/>
                 
                 <div style={styles.headingContainer}>
-                    <Alert color="success">Added Successfully</Alert>
+                    {message && <Alert color="success">{message}</Alert>}
                     <form onSubmit={handleItemAddition}>
                         <Input size="lg" placeholder="Category eg Adidas sneakers" value={item_category} onChange={e=> setItemCategory(e.target.value)} sx={{mt:4}} fullWidth />
                         <Input size="lg" placeholder="Quantity i.e. number of units" value={units} onChange={e=> setUnits(e.target.value)} sx={{mt:2}} fullWidth />

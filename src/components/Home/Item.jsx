@@ -11,7 +11,7 @@ import Button from '@mui/joy/Button';
 import ClearIcon from '@mui/icons-material/Clear';
 import inventoryService from '../../services/inventory';
 
-const Item = ({item, setRefresh}) => {
+const Item = ({item, setRefresh, setMessage}) => {
     const inStock = item.units>0
     const [showDeleteButton, setShowDeleteButton] = useState(false)
     const [units, setUnits] = useState("")
@@ -23,6 +23,10 @@ const Item = ({item, setRefresh}) => {
         if(data){
             console.log(data)
             setRefresh(true)
+            setMessage("Moved out of stock Successfully")
+            setTimeout(() => {
+                setMessage("")
+            }, 5000);
         }
     }
 
@@ -30,6 +34,10 @@ const Item = ({item, setRefresh}) => {
         const data = await inventoryService.deleteCategory(item.id);
         if(data){
             setRefresh(true)
+            setMessage("Deleted Successfully")
+            setTimeout(() => {
+                setMessage("")
+            }, 5000);
         }
     }
     const styles = {
