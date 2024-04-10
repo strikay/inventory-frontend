@@ -36,6 +36,11 @@ npm run dev
 ```
 The project should start and display the HOST and the PORT it is running on, e.g. http://localhost:5173
 
+To login you can use the following fictitious credentials (provided you are using it with the Laravel API referenced above):
+
+Email: po@inventory.com
+Password: password
+
 
 ## License
 
