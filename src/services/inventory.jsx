@@ -1,8 +1,9 @@
 
 
 import axios from 'axios'
-const baseUrl = 'http://127.0.0.1:8000/api'
+const baseUrl = `${import.meta.env.VITE_API_SERVER_URL}/api`
 
+console.log(baseUrl)
 let token = null
 
 const setToken = newToken => {
