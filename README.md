@@ -5,7 +5,19 @@ Inventory Client App is a React Application for managing inventory. It connects 
 It was bootstrapped using Vite
 
 ## Screenshots
-![Screenshot 2024-04-11 072840](https://github.com/strikay/inventory-frontend/assets/41167411/b048b8af-6a8e-460f-93c6-e3445e7ad648)
+<img class=mobile-image src="https://github.com/strikay/inventory-frontend/assets/41167411/b048b8af-6a8e-460f-93c6-e3445e7ad648" />
+<img class=mobile-image src="https://github.com/strikay/inventory-frontend/assets/41167411/1ad75274-4628-4f2c-b73d-f9679b9ea4ed" />
+
+<style>
+  .img {
+    display: inline-block;
+  }
+  img.mobile-image {
+	width: 49%;
+    display: inline-block;
+  }
+</style>
+![Screenshot 2024-04-11 072840](https://github.com/strikay/inventory-frontend/assets/41167411/b048b8af-6a8e-460f-93c6-e3445e7ad648) 
 ![Screenshot 2024-04-11 072953](https://github.com/strikay/inventory-frontend/assets/41167411/1ad75274-4628-4f2c-b73d-f9679b9ea4ed)
 ![Screenshot 2024-04-11 073236](https://github.com/strikay/inventory-frontend/assets/41167411/1c9fc187-18b0-4d5d-9b26-ec2b3d4aba83)
 ![Screenshot 2024-04-11 073336](https://github.com/strikay/inventory-frontend/assets/41167411/ba1d47e6-7b73-4bd0-a81d-3a6f8732ef88)
